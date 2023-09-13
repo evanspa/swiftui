@@ -10,7 +10,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Color(.blue)
+            LinearGradient(
+                colors: [.blue, .white],
+                startPoint: UnitPoint.topLeading,
+                endPoint: .bottomTrailing
+            )
+            .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Cupertino, CA")
+                    .font(
+                        .system(
+                            size: 32.0,
+                            weight: .medium,
+                            design: .default
+                        )
+                    )
+                    .foregroundColor(.white)
+            }
         }
     }
 }
@@ -20,3 +36,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
